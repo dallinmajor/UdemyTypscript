@@ -1,12 +1,13 @@
 import express from 'express';
-import BodyParser from 'body-parser';
 import { router } from './routes/loginRoutes';
-import bodyParser = require('body-parser');
+import bodyParser from 'body-parser';
+import cookieSession from 'cookie-session';
 
 const app = express();
 const PORT = 4000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieSession({ keys: ['laskdjf']}));
 app.use(router);
 
 app.listen(PORT, () => {

@@ -1,7 +1,7 @@
-import { Router, Response, Request } from 'express';
-import { get } from 'https';
+import { Response, Request } from 'express';
+import { get, controller } from './decorators';
 
-@AbortController('/')
+@controller('/auth')
 class LoginController {
     @get('/login')
     getLogin(req: Request, res: Response) {

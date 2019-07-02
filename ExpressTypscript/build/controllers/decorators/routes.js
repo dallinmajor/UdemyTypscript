@@ -2,11 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 var Methods_1 = require("./Methods");
+var MetatdataKeys_1 = require("./MetatdataKeys");
 function routeBinder(method) {
     return function (path) {
         return function (target, key, desc) {
-            Reflect.defineMetadata('path', path, target, key);
-            Reflect.defineMetadata('method', 'get', target, key);
+            Reflect.defineMetadata(MetatdataKeys_1.MetadataKeys.path, path, target, key);
+            Reflect.defineMetadata(MetatdataKeys_1.MetadataKeys.method, method, target, key);
         };
     };
 }
